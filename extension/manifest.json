@@ -1,0 +1,21 @@
+{
+  "name": "Youtube Study Notification",
+  "version": "1.0",
+  "description": "Retrieves video urls and playlist so user can recieve reminders through text or web",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_title": "Youtuber Reminder",
+    "default_popup": "popup.html"
+  },
+
+  "options_page": "options.html",
+  "permissions": ["activeTab", "unlimitedStorage"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "css": [],
+      "js": ["get_video.js"]
+    }
+  ]
+}
