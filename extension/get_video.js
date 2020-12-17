@@ -1,7 +1,17 @@
+
+
+
+
+
 /* 2 cases
 1) When your viewing an actual video  --> This case is super trivial 
+   - This needs to be activated (or allowed to be) when the youtube url contains 'watch'. 
+For example "youtube.com/watch?************"
 
 2)  When your looking at a playlist 
+   - This needs to be activated (or allowed to be) when the youtube url contains 'playlist'.
+For example "yotuube.com/playlist?list=WL"
+
 
 Here, what I'm doing is going to get the div id - content to get an array of videos
 Then, I'll find the css selectors that denote each individual video
@@ -22,5 +32,5 @@ function get_single_video() {
 }
 
 function get_playlists_videos() {
-    
+    return -1
 }
