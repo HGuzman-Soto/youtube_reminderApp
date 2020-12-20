@@ -65,7 +65,7 @@ function get_playlists_videos() {
 
     let arr = []
     for (video of videos) {
-        arr.push(video.textContent)
+        console.log(video.getAttribute('href'))
     }
     console.log(arr)
 
