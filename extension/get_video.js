@@ -44,17 +44,24 @@ function get_single_video() {
 function get_playlists_videos() {
     const selectors = {
         playlist_contents: "#contents",
+        video: "[class='yt-simple-endpoint style-scope ytd-playlist-video-renderer']"
     }
 
+    let test = document.querySelector(selectors.video)
+    console.log(test)
     let playlist = document.querySelector(selectors.playlist_contents)
-    console.log(playlist)
-
+    let videos = sel(playlist, selectors.video)
+    console.log(videos)
 
 
 
 
 
     return -1
+}
+
+function sel(em, sel) {
+  return Array.prototype.slice.call(em.querySelectorAll(sel));
 }
 
 get_playlists_videos()
