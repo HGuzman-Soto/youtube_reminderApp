@@ -23,6 +23,16 @@ Essentially, I'll be iterating through an array that will allow me to get an arr
 AND 
 What I just thought about, is we want to keep information that keeps track of the 
 time stamp where we ended a video
+
+Future implementations:
+1) Give user ability to index the videos they want to add to the
+playlist
+
+2) Automatically set it up so that a video after being watched through
+has the option of being removed from the playlist
+
+3) Potential issues with the time stamp
+
 */
 
 
@@ -32,5 +42,20 @@ function get_single_video() {
 }
 
 function get_playlists_videos() {
+    const selectors = {
+        playlist_contents: "#contents",
+    }
+
+    let playlist = document.querySelector(selectors.playlist_contents)
+    console.log(playlist)
+
+
+
+
+
+
     return -1
 }
+
+get_playlists_videos()
+console.log("test")
