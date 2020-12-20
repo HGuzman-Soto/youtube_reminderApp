@@ -36,6 +36,15 @@ has the option of being removed from the playlist
 */
 
 
+class Video{
+    constructor() {
+        this.title = [];
+        this.url = [];
+    }
+}
+
+
+
 function get_single_video() {
     let video_url = window.location.href
     return video_url
@@ -65,9 +74,24 @@ function get_playlists_videos() {
 
     let arr = []
     for (video of videos) {
-        console.log(video.getAttribute('href'))
+        let link = video.getAttribute('href')
+        let title_vid = video.querySelector(selectors.title)
+
+
+        vid = new Video();
+        vid.title.push(title_vid)
+        vid.url.push(link)
+
+
+        // // vid.title.push(video.querySelector(selectors.title).textContent)
+        // vid.url.push(video.getAttribute('href'))
+        console.log(vid.title)
+        console.log(vid.url)
+
+
     }
-    console.log(arr)
+    console.log(vid.title)
+    console.log(vid.url)
 
 
 
