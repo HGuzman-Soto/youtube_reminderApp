@@ -25,7 +25,6 @@ What I just thought about, is we want to keep information that keeps track of th
 time stamp where we ended a video
 */
 
-
 function get_single_video() {
     let video_url = window.location.href
     return video_url

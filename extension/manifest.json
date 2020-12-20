@@ -11,6 +11,10 @@
   "options_page": "options.html",
   "permissions": ["activeTab", "unlimitedStorage"],
 
+  "background": {
+    "scripts": ["reminder.js"],
+    "persisent": false
+  },
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
