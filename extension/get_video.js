@@ -41,17 +41,33 @@ function get_single_video() {
     return video_url
 }
 
+
+
+/*
+
+TODO: 
+1) Design on a class
+2) Get css selectors for the url for each videos
+
+*/
 function get_playlists_videos() {
     const selectors = {
         playlist_contents: "#contents",
-        video: "[class='yt-simple-endpoint style-scope ytd-playlist-video-renderer']"
+        video: "[class='yt-simple-endpoint style-scope ytd-playlist-video-renderer']",
+        title: "span[id='video-title']"
     }
 
-    let test = document.querySelector(selectors.video)
-    console.log(test)
     let playlist = document.querySelector(selectors.playlist_contents)
     let videos = sel(playlist, selectors.video)
+    let titles = sel(playlist, selectors.title)
+    console.log(titles)
     console.log(videos)
+
+    let arr = []
+    for (video of videos) {
+        arr.push(video.textContent)
+    }
+    console.log(arr)
 
 
 
@@ -65,4 +81,4 @@ function sel(em, sel) {
 }
 
 get_playlists_videos()
-console.log("test")
+// get_single_video()
