@@ -9,7 +9,7 @@
   },
 
   "options_page": "options.html",
-  "permissions": ["activeTab", "unlimitedStorage"],
+  "permissions": ["declarativeContent", "activeTab", "unlimitedStorage",  "storage" ],
 
   "background": {
     "scripts": ["reminder.js"],
