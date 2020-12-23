@@ -1,8 +1,5 @@
 
 
-
-
-
 /* 2 cases
 1) When your viewing an actual video  --> This case is super trivial 
    - This needs to be activated (or allowed to be) when the youtube url contains 'watch'. 
@@ -44,22 +41,35 @@ class Video{
 }
 
 
-
 function get_single_video() {
+    const selectors = {
+        title_content: "div[id='info-contents']",
+        title: "h1[class='title style-scope ytd-video-primary-info-renderer']"
+    }
+    vid = new Video();
+    let title_vid = document.querySelector(selectors.title).textContent
+    console.log(title_vid)
     let video_url = window.location.href
-    return video_url
-}
 
+    vid.title.push(title_vid)
+    vid.url.push(video_url)
+    
+    console.log(vid.title)
+    console.log(vid.url)
+
+    return vid
+}
 
 
 /*
 
-TODO: 
-1) Design on a class
-2) Get css selectors for the url for each videos
+Input: Start_index and end_index denote the subset of videos the user is storing
+Output: Multiple Video objects are created and stored in the chrome database
+They contain a url and the title of the video
 
 */
-function get_playlists_videos() {
+
+function get_playlists_videos(start_index, end_index) {
     const selectors = {
         playlist_contents: "#contents",
         video: "[class='yt-simple-endpoint style-scope ytd-playlist-video-renderer']",
@@ -72,37 +82,43 @@ function get_playlists_videos() {
     console.log(titles)
     console.log(videos)
 
-    let arr = []
     for (video of videos) {
         let link = video.getAttribute('href')
-        let title_vid = video.querySelector(selectors.title)
-
+        let title_vid = video.querySelector(selectors.title).textContent.trim()
 
         vid = new Video();
         vid.title.push(title_vid)
         vid.url.push(link)
 
-
-        // // vid.title.push(video.querySelector(selectors.title).textContent)
-        // vid.url.push(video.getAttribute('href'))
         console.log(vid.title)
         console.log(vid.url)
-
-
     }
     console.log(vid.title)
     console.log(vid.url)
 
-
-
-
-
-    return -1
+    return vid
 }
 
 function sel(em, sel) {
   return Array.prototype.slice.call(em.querySelectorAll(sel));
 }
 
-get_playlists_videos()
-// get_single_video()
+
+function main() {
+    let current_url = String(window.location.href)
+
+    //case 1 - url contains watch
+    if (current_url.includes("watch")) {
+        get_single_video()
+    }
+
+    //case 2 - url contains playlist
+    if (current_url.includes("playlist")) {
+        get_playlists_videos(start_index, end_index)
+    }
+}
+
+main()
+
+
+
