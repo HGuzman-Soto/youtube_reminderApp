@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "youtubereminderappd5afad3b": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
