@@ -9,7 +9,7 @@
   },
 
   "options_page": "options.html",
-  "permissions": ["activeTab", "unlimitedStorage"],
+  "permissions": ["activeTab", "storage", "https://*/", "unlimitedStorage"],
 
   "content_scripts": [
     {
