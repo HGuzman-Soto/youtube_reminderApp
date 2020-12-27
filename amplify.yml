@@ -14,7 +14,7 @@ frontend:
       commands:
         - yarn run build
   artifacts:
-    baseDirectory: youtube_reminder/build
+    baseDirectory: build
     files:
       - "**/*"
   cache:
