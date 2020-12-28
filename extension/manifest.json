@@ -15,7 +15,7 @@
     {
       "matches": ["https://*.youtube.com/*"],
       "css": [],
-      "js": ["get_video.js"]
+      "js": ["db.js", "model.js", "get_video.js"]
     }
   ]
 }
