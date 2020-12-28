@@ -5,15 +5,53 @@
 
     <style>
       button{
-        height: 30px;
-        width: 30px;
+        height: 100px;
+        width: 100px;
         outline: none;
+        padding: 20px;
+        text-align: center;
+        display: inline-block;
+        align-self: center;
+        background-color: #192a30;
+        color: white;
+        
       }
+      button:hover{
+        background-color: #1e1b1c;
+      }
+
+      .webApp {
+        color: teal;
+        width: 250px;
+        height: 10px;
+      }
+      h1{
+        width: 300px;
+      }
+      .redText {
+        color: #ff0000;
+      }
+
+
+
+      
     </style>
   </head>
   <body>
+    
+    <h1>Youtube <span class="redText">Reminder</span></h1>
+    <p id = "notifyUser">Please select a button below<p>
+    
+    <div>
+      <button id="addVideo">Add video</button>
+      <button id="addPlaylist">Add Playlist</button>
+      <script src="get_video.js"></script>
+    </div>
+    
+    <div>
+      <button class="webApp">View Playlist</button>
+    </div>
 
-    <button id="changeColor"></button>
-    <script src="get_video.js"></script>
+    
   </body>
 </html>
