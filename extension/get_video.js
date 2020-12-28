@@ -96,14 +96,15 @@ function main() {
 
   //case 2 - url contains playlist
   if (current_url.includes("playlist")) {
-    get_playlists_videos(start_index, end_index);
+    get_playlists_videos(0, 0);
+    download();
   }
 }
 
 async function download() {
   chrome.storage.local.get(["videos"], function (items) {
     let result = JSON.stringify(items);
-    console.log(results);
+    console.log(result);
   });
 }
 main();

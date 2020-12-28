@@ -5,7 +5,7 @@ class Model {
   async save() {
     let table = this.constructor.name.toLowerCase() + "s";
     console.log("tables", table);
-    this.id = Math.floor(Math.random() * 100);
+    this.id = Math.floor(Math.random() * 10000);
 
     let rows = await select(table);
     console.log("rows", rows);

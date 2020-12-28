@@ -1,7 +1,3 @@
-/*
-Functions to handle database interactions in local storages
-*/
-
 // function init(cb) {
 //   chrome.storage.local.get(["store"], (result) => {
 //     if (result.store) {
@@ -26,6 +22,7 @@ async function select(table) {
       if (!(table in res)) {
         return rs([]);
       }
+
       return rs(res[table]);
     });
   });
