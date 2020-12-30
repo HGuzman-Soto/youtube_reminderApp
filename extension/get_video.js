@@ -140,3 +140,13 @@ has the option of being removed from the playlist
 3) Potential issues with the time stamp
 
 */
+
+/*
+Database issues
+
+1) IDS - Duplicates. Maybe set them based on title only? or url?
+2) Add functionality to delete videos
+3) Got to rework database a bit so you can delete specific rows?
+
+
+*/
